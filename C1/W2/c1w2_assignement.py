@@ -50,6 +50,14 @@ def build_model():
     history = model.fit(x_train, y_train, epochs=10, callbacks=[callbacks])
     return model, history
 
+class myCallback(tf.keras.callbacks.Callback):
+    def on_epoch_end(self, epoch, logs={}):
+        if (logs.get('accuracy') >= 0.995):
+            print("\n Reached 99% accuracy, so cancelling training!")
+            self.model.stop_training = True
+
+    callbacks = myCallback()
+
 if __name__ == '__main__':
 
     model, history = build_model()

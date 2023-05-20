@@ -16,3 +16,18 @@ The MaxPoo2D Layer is designed to compress the image, while maintening the conte
 By specifying (2,2) for the MaxPooling, the effect is to quarter the size of the image. The idea is that it create a 2x2 array of pixels, an
 picks the biggest one. Thus, it turns 4 pixels into 1. It repeats this across the image, and in doing so, it halves both the number of
 horizontal and vertical pixels, effectively reducing the image to 25% of the original image.
+
+**** Binary Classification Problem ****
+lOSS FUNKTION: We have here a binary classification problem, the model will be trained with the binary_crossentropy loss function
+OPTIMIZER: Using RMSprop is preferable to stochastic gradient descent (SGD), because RMSprop automates learning-rate tuning for us.
+(Orther optimizers, such as Adam and Adagrad, also automaticaly adapt the learning -rate during training, and would work equally well here)
+
+############# Courses 2: CNN upgraded Lab #####################
+C2 Lab1: First review how to build CNNs, prepare your data with ImageDataGenerator and examine the results.
+    1. Explore the example data of Dogs vs. Cats
+    2. Build an train a neural network to classify between the two pets
+    3. Evaluate the training and validation accuracy
+
+############# Courses 2: CNN Data Augmentation on Horses or Humans Dataset ######################
+Applying data Augmentation requires good understanding of the dataset
+***** ImageDataGenerator *******
