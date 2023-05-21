@@ -31,3 +31,15 @@ C2 Lab1: First review how to build CNNs, prepare your data with ImageDataGenerat
 ############# Courses 2: CNN Data Augmentation on Horses or Humans Dataset ######################
 Applying data Augmentation requires good understanding of the dataset
 ***** ImageDataGenerator *******
+
+############# Courses 2 W3: Transfer Learning #############
+Use of pre-trained model to achieve good results even wiht small training dataset
+    1. Just get the convolution layers of one model
+    2. attach some dense layers onto it
+    3. train just the dense network
+    4. evaluate the results
+
+    *** Set up the pretrained model ***
+    1. Set the input shape to fit your application.
+    2. Pick and freeze the convolution layers to take advantages of the features it has learned already
+    3. add dense layers wich you will train
