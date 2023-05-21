@@ -127,7 +127,7 @@ def plot_function(history):
     plt.grid(True)
     plt.figure()
 
-    plt.plot(epochs, loss, 'r', label='Training loss', grid=)
+    plt.plot(epochs, loss, 'r', label='Training loss')
     plt.plot(epochs, val_loss, 'b', label='Validation loss')
     plt.title('Training and validation loss')
     plt.grid(True)
