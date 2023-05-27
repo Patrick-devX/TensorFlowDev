@@ -43,3 +43,14 @@ Use of pre-trained model to achieve good results even wiht small training datase
     1. Set the input shape to fit your application.
     2. Pick and freeze the convolution layers to take advantages of the features it has learned already
     3. add dense layers wich you will train
+
+
+############# Courses 2: MultiClass Classifier #############
+
+############# Courses 2 Assignment: MultiClass Classifier, Sign Language MNIST #############
+The Dataset Sign Language MNIST dataset contains 28x28 images of hands depicting the 26 letters of the english alphabet.
+Today we will pre-process the data so that it can be fed into a CNN to correctly classify each image as the letter represent.
+*** Think about data_generation batch_size when training
+
+
+################ Courses 2: Basic Tokenizer ##################
