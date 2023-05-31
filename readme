@@ -53,4 +53,20 @@ Today we will pre-process the data so that it can be fed into a CNN to correctly
 *** Think about data_generation batch_size when training
 
 
-################ Courses 2: Basic Tokenizer ##################
+################ Courses 2: Basic Tokenizer C2-W2-Lab2 ##################
+Training a binary classified model with the IMDB Dataset
+in this lab we will build a sentiment mode to distinguish between positive and negative movies reviews.
+***** Visualize the trained weights in the Embedding layer to see words that are clustered together. ****
+
+****** GlobalAveragePooling *******
+This layer add a task of averaging over the sequence dimension before connecting to the dense layers.
+E.g. sample_array = np.array([[[10,2], [1,3], [1,1]]]
+output = tf.keras.layers.GlobalAveragePooling1D()(sample_array)
+output = [[4 2]] ---> (10+1+1)3 and (2+3+1)/3
+
+********* C3 W3 Lab3 imdb subwords ************
+Subword Tokenization with the IMDB Reviews Dataset: In this Lab, we will look at the pre-tokenozed dataset that is using subword text encoding.
+This is an alternative to word-based tokenization which we have been using in the previous lab. Leet see his impact on the model
+
+In this lab we saw how subword text encoding can be a robust technique to avoid oov tokens. It can decode uncommon words it has not seen before even with
+a relatively small vocab size. Consequently, it results in longer token sequences when compared to full word tokenization.
