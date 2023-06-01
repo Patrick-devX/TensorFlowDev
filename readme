@@ -64,9 +64,13 @@ E.g. sample_array = np.array([[[10,2], [1,3], [1,1]]]
 output = tf.keras.layers.GlobalAveragePooling1D()(sample_array)
 output = [[4 2]] ---> (10+1+1)3 and (2+3+1)/3
 
-********* C3 W3 Lab3 imdb subwords ************
+********* C3 W3 Lab1 imdb subwords SINGLE LSTM LAYER ************
 Subword Tokenization with the IMDB Reviews Dataset: In this Lab, we will look at the pre-tokenozed dataset that is using subword text encoding.
 This is an alternative to word-based tokenization which we have been using in the previous lab. Leet see his impact on the model
 
 In this lab we saw how subword text encoding can be a robust technique to avoid oov tokens. It can decode uncommon words it has not seen before even with
 a relatively small vocab size. Consequently, it results in longer token sequences when compared to full word tokenization.
+
+********* C3 W3 Lab2 imdb subwords: Multiple LSTM Layers ************
+LSTM layer expects a sequence input so if the prevous layer is also an LSTM, then it should output a sequence as well. The output dimension
+in in 3 dimensions (batch_size, timesteps, features).
