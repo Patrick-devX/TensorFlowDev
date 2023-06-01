@@ -1,4 +1,4 @@
-# TEXT CLASSIFICATION-MULTI Layer LSTM- DAtaset pretokenized IMDB Reviews dataset
+# TEXT CLASSIFICATION-CONV1D Layer- DAtaset pretokenized IMDB Reviews dataset
 
 import tensorflow_datasets as tfds
 from tensorflow import keras
@@ -28,35 +28,38 @@ test_dataset = test_data.padded_batch(BATCH_SIZE)
 
 batch_size = 1
 timesteps = 20
-features = 16
+features = 20
+filters = 128
 lstm_dim = 8
+kernel_size = 5
 
 # Define array input with random values
 random_input = np.random.rand(batch_size, timesteps, features)
 print(f'shape of input array: {random_input.shape}')
+print(random_input)
 
 #Define LSTM tha return a sequence
-lstm_rs1 = keras.layers.LSTM(lstm_dim, return_sequences=False)
-result_rsf = lstm_rs1(random_input)
-print(f'shape of LSTM output with return_sequence False {result_rsf.shape}')
+conv1D = keras.layers.Conv1D(filters=filters, kernel_size=kernel_size, activation='relu')
+result_conv1D = conv1D(random_input)
+print(f'shape of conv1D output with return_sequence False {result_conv1D.shape}')
 
 #Define LSTM tha return a sequence
-lstm_rs2 = keras.layers.LSTM(lstm_dim, return_sequences=True)
-result_rst = lstm_rs2(random_input)
-print(f'shape of LSTM output with return_sequence True {result_rst.shape}')
+gmp = keras.layers.GlobalMaxPooling1D()
+result_gmp = gmp(random_input)
+print(f'shape of globalmaxpooling1D output with return_sequence True {result_gmp.shape}')
 
 ##### Build and compile the model #####
 #Hyperparameter
 embedding_dim = 64
-lstm1_dim = 64
-lstm2_dim = 32
+filters = 128
+kernel_size = 5
 dense_dim = 64
 NUM_EPOCHS = 10
 
 model = keras.Sequential([
     keras.layers.Embedding(tokenizer.vocab_size, embedding_dim),
-    keras.layers.Bidirectional(keras.layers.LSTM(lstm1_dim, return_sequences=True)),
-    keras.layers.Bidirectional(keras.layers.LSTM(lstm1_dim)),
+    keras.layers.Conv1D(filters=filters, kernel_size=kernel_size, activation='relu'),
+    keras.layers.GlobalMaxPooling1D(),
     keras.layers.Dense(dense_dim, activation='relu'),
     keras.layers.Dense(1, activation='sigmoid')
 ])

@@ -35,7 +35,7 @@ dense_dim = 64
 NUM_EPOCHS = 10
 
 model = keras.Sequential([
-    keras.layers.Embedding(tokenizer.vocab_size, embedding_dim, input_length=BATCH_SIZE),
+    keras.layers.Embedding(tokenizer.vocab_size, embedding_dim),
     keras.layers.Bidirectional(keras.layers.LSTM(lstm_dim)),
     keras.layers.Dense(dense_dim, activation='relu'),
     keras.layers.Dense(1, activation='sigmoid')
