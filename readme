@@ -74,3 +74,9 @@ a relatively small vocab size. Consequently, it results in longer token sequence
 ********* C3 W3 Lab2 imdb subwords: Multiple LSTM Layers ************
 LSTM layer expects a sequence input so if the prevous layer is also an LSTM, then it should output a sequence as well. The output dimension
 in in 3 dimensions (batch_size, timesteps, features).
+
+********* C3 W3 Assignment: Exploring Overfitting in NLP **********
+The Goal is to put knowledge into practice by creating a model architechture that does not overfit.
+We will be using a variation of the Sentiment140 dataset, which contains 1.6 millions tweets alongside their respective sentiment (0 for negative and 4 for positive).
+
+*********** C3 W4 Lab1: Generating Text with Neural Networks **********
