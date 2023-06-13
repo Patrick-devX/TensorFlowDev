@@ -116,7 +116,7 @@ def windowed_dataset(series, window_size, batch_size, shuffle_buffer):
     #Schuffle the windows
     dataset = dataset.shuffle(shuffle_buffer)
 
-    # Creaste bathes of windows
+    # Create bathes of windows
     dataset = dataset.batch(batch_size=batch_size).prefetch(1)
 
     return  dataset
